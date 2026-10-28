@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora interactiva</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>Calculadora interactiva</h1>
+    <p class="ayuda">Escribe un número, elige una operación y pulsa «Calcular». Puedes usar también el teclado.</p>
+
+    <section aria-label="Calculadora">
+      <output id="pantalla" class="pantalla" aria-label="Pantalla de la calculadora">0</output>
+
+      <div class="teclado">
+        <button type="button" class="tecla accion span2" data-accion="limpiar" aria-label="Limpiar todo">C</button>
+        <button type="button" class="tecla accion" data-accion="borrar" aria-label="Borrar último dígito">⌫</button>
+        <button type="button" class="tecla op" data-op="÷" aria-label="Dividir">÷</button>
+
+        <button type="button" class="tecla" data-num="7">7</button>
+        <button type="button" class="tecla" data-num="8">8</button>
+        <button type="button" class="tecla" data-num="9">9</button>
+        <button type="button" class="tecla op" data-op="×" aria-label="Multiplicar">×</button>
+
+        <button type="button" class="tecla" data-num="4">4</button>
+        <button type="button" class="tecla" data-num="5">5</button>
+        <button type="button" class="tecla" data-num="6">6</button>
+        <button type="button" class="tecla op" data-op="−" aria-label="Restar">−</button>
+
+        <button type="button" class="tecla" data-num="1">1</button>
+        <button type="button" class="tecla" data-num="2">2</button>
+        <button type="button" class="tecla" data-num="3">3</button>
+        <button type="button" class="tecla op" data-op="+" aria-label="Sumar">+</button>
+
+        <button type="button" class="tecla span2" data-num="0">0</button>
+        <button type="button" class="tecla span2" data-num="." aria-label="Punto decimal">.</button>
+
+        <button type="button" id="igual" class="tecla igual span4" disabled>Calcular</button>
+      </div>
+      <p id="pista" class="pista">El botón «Calcular» se activa cuando hay dos números y una operación.</p>
+    </section>
+
+    <p id="mensaje" class="mensaje" role="status"></p>
+
+    <section class="historial-bloque" aria-labelledby="titulo-historial">
+      <h2 id="titulo-historial">Historial (últimos 7)</h2>
+      <p id="historial-vacio" class="pista">Aún no hay cálculos.</p>
+      <ol id="historial" class="historial"></ol>
+      <div class="acciones">
+        <button type="button" id="borrar-historial" class="boton-secundario">Borrar historial</button>
+        <button type="button" id="deshacer" class="boton-principal" hidden>Deshacer</button>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
